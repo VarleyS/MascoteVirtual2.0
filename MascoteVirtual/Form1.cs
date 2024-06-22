@@ -1,12 +1,7 @@
-﻿using MascoteVirtual.Service;
+﻿using MascoteVirtual.Models;
+using MascoteVirtual.Service;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MascoteVirtual
@@ -16,13 +11,30 @@ namespace MascoteVirtual
         public Form1()
         {
             InitializeComponent();
+            InitializaCustomCompoments();
+        }
+
+        private void InitializaCustomCompoments()
+        {
+            listBoxPokemon = new ListBox
+            {
+                Location = new System.Drawing.Point(205, 131),
+                Size = new System.Drawing.Size(487, 277)
+            };
+
+            this.Controls.Add(listBoxPokemon);
         }
 
         private async void EventHandler(object sender, EventArgs e)
         {
             GetPokemon getPokemon = new GetPokemon();
-            await getPokemon.GetPokemonRepository();
-            MessageBox.Show("Funcionou!");
+            List<PokemonResults> pokemons = await getPokemon.GetPokemonRepository();
+
+            listBoxPokemon.Items.Clear();
+            foreach (var pokemon in pokemons)
+            {
+                listBoxPokemon.Items.Add($"Name: {pokemon.Name}, URL: {pokemon.Url}");
+            }
         }
     }
 }
