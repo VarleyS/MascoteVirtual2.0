@@ -33,7 +33,14 @@ namespace MascoteVirtual
             listBoxPokemon.Items.Clear();
             foreach (var pokemon in pokemons)
             {
-                listBoxPokemon.Items.Add($"Name: {pokemon.Name}, URL: {pokemon.Url}");
+                if (pokemon != null)
+                {
+                    var ulrsprites = await getPokemon.GetSprites(pokemon.Url);
+
+                    listBoxPokemon.Items.Add($"Name: {pokemon.Name}, IMAGE: {ulrsprites.front_default}");
+                }
+
+                
             }
         }
     }
