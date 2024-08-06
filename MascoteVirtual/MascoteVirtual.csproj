@@ -93,6 +93,7 @@
     <Compile Include="Models\PokemonModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\GetImage.cs" />
     <Compile Include="Service\GetPokemon.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -126,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imageDigivice %28Personalizado%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\PokemonsImage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

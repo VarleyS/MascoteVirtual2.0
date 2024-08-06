@@ -29,6 +29,7 @@ namespace MascoteVirtual
         {
             GetPokemon getPokemon = new GetPokemon();
             List<PokemonResults> pokemons = await getPokemon.GetPokemonRepository();
+            await GetImage.ArmazenaImagem();
 
             listBoxPokemon.Items.Clear();
             foreach (var pokemon in pokemons)
