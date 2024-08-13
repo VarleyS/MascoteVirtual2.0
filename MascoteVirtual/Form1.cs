@@ -31,7 +31,13 @@ namespace MascoteVirtual
         {
             GetPokemon getPokemon = new GetPokemon();
             List<PokemonResults> pokemons = await getPokemon.GetPokemonRepository();
-            await GetImage.ArmazenaImagem();
+
+            await GetImage.BuscaImagem("bulbasaur");
+            
+            //await GetImage.ArmazenaImagem();
+
+
+
             PictureBox1(sender, e);
 
             //listBoxPokemon.Items.Clear();
@@ -77,6 +83,11 @@ namespace MascoteVirtual
             {
                 MessageBox.Show("Imagem não encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

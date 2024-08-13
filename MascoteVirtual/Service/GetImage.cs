@@ -1,9 +1,11 @@
 ﻿using MascoteVirtual.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MascoteVirtual.Service
 {
@@ -56,6 +58,20 @@ namespace MascoteVirtual.Service
 
                 //salva a imagem no disco
                 File.WriteAllBytes(filePath, imageBytes);
+            }
+        }
+
+        public static async Task BuscaImagem(string nomeImagem)
+        {
+            string nome = $"{nomeImagem}.jpg";
+
+            string pasta = "D:\\Projetos\\MascoteVirtual\\MascoteVirtual\\MascoteVirtual\\Resources\\PokemonsImage\\";
+
+            string arquivo = pasta + nome;
+
+            if (File.Exists(arquivo))
+            {
+                
             }
         }
 
