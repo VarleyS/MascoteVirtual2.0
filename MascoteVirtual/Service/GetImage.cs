@@ -61,7 +61,7 @@ namespace MascoteVirtual.Service
             }
         }
 
-        public static async Task BuscaImagem(string nomeImagem)
+        public static async Task BuscaImagem(string nomeImagem, PictureBox pictureBox)
         {
             string nome = $"{nomeImagem}.jpg";
 
@@ -71,7 +71,11 @@ namespace MascoteVirtual.Service
 
             if (File.Exists(arquivo))
             {
-                
+                pictureBox.Image = Image.FromFile(arquivo);   
+            }
+            else
+            {
+                MessageBox.Show("Imagem não encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

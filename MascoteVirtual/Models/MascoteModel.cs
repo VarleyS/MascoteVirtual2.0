@@ -1,11 +1,4 @@
-﻿using MascoteVirtual.Atributos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MascoteVirtual.Models
+﻿namespace MascoteVirtual.Models
 {
     public class MascoteModel : PokemonModel
     {

@@ -121,6 +121,7 @@
             this.button7.TabIndex = 8;
             this.button7.Text = "START";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.EventHandler);
             // 
             // button8
             // 
@@ -158,6 +159,7 @@
             this.pictureBox3.Location = new System.Drawing.Point(36, 30);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(800, 284);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 

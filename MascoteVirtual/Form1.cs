@@ -31,14 +31,12 @@ namespace MascoteVirtual
         {
             GetPokemon getPokemon = new GetPokemon();
             List<PokemonResults> pokemons = await getPokemon.GetPokemonRepository();
-
-            await GetImage.BuscaImagem("bulbasaur");
             
             //await GetImage.ArmazenaImagem();
 
 
 
-            PictureBox1(sender, e);
+            PictureBox3(sender, e);
 
             //listBoxPokemon.Items.Clear();
             //foreach (var pokemon in pokemons)
@@ -68,24 +66,20 @@ namespace MascoteVirtual
 
             //adiciona o PictureBox ao fomuláio
             this.Controls.Add(pictureBox2);
-
-            //carrega e exibe a imagem
-            LoadAndDisplayImage("D:\\Projetos\\MascoteVirtual\\MascoteVirtual\\MascoteVirtual\\Resources\\PokemonsImage\\bulbasaur.jpg");
-        }
-
-        private void LoadAndDisplayImage(string imagePath)
-        {
-            if (File.Exists(imagePath))
-            {
-                pictureBox2.Image = Image.FromFile(imagePath);
-            }
-            else
-            {
-                MessageBox.Show("Imagem não encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void PictureBox3(object sender, EventArgs e)
+        {
+            string nomeImagem = "bulbasaur";
+            await GetImage.BuscaImagem(nomeImagem, pictureBox3);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
         {
 
         }
