@@ -2,6 +2,8 @@
 using MascoteVirtual.Service;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MascoteVirtual
@@ -16,33 +18,70 @@ namespace MascoteVirtual
 
         private void InitializaCustomCompoments()
         {
-            listBoxPokemon = new ListBox
-            {
-                Location = new System.Drawing.Point(205, 131),
-                Size = new System.Drawing.Size(487, 277)
-            };
+            //listBoxPokemon = new ListBox
+            //{
+            //    Location = new System.Drawing.Point(205, 131),
+            //    Size = new System.Drawing.Size(487, 277)
+            //};
 
-            this.Controls.Add(listBoxPokemon);
+            //this.Controls.Add(listBoxPokemon);
         }
 
         private async void EventHandler(object sender, EventArgs e)
         {
             GetPokemon getPokemon = new GetPokemon();
             List<PokemonResults> pokemons = await getPokemon.GetPokemonRepository();
-            await GetImage.ArmazenaImagem();
+            
+            //await GetImage.ArmazenaImagem();
 
-            listBoxPokemon.Items.Clear();
-            foreach (var pokemon in pokemons)
+
+
+            PictureBox3(sender, e);
+
+            //listBoxPokemon.Items.Clear();
+            //foreach (var pokemon in pokemons)
+            //{
+            //    if (pokemon != null)
+            //    {
+            //        var ulrsprites = await getPokemon.GetSprites(pokemon.Url);
+
+            //        listBoxPokemon.Items.Add($"Name: {pokemon.Name}, IMAGE: {ulrsprites.front_default}");
+            //    }
+            //}
+        }
+
+        private void PictureBox1(object sender, EventArgs e)
+        {
+            //configuração inicial do fomulário
+            this.Text = "Exibir Imagem";
+            this.Size = new System.Drawing.Size(800, 600);
+
+
+            //inicializa e configura o PictureBox
+            pictureBox2 = new PictureBox
             {
-                if (pokemon != null)
-                {
-                    var ulrsprites = await getPokemon.GetSprites(pokemon.Url);
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Dock = DockStyle.Fill
+            };
 
-                    listBoxPokemon.Items.Add($"Name: {pokemon.Name}, IMAGE: {ulrsprites.front_default}");
-                }
+            //adiciona o PictureBox ao fomuláio
+            this.Controls.Add(pictureBox2);
+        }
 
-                
-            }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void PictureBox3(object sender, EventArgs e)
+        {
+            string nomeImagem = "bulbasaur";
+            await GetImage.BuscaImagem(nomeImagem, pictureBox3);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

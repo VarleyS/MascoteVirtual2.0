@@ -129,7 +129,10 @@
     <None Include="Resources\imageDigivice %28Personalizado%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\PokemonsImage\" />
+    <None Include="Resources\PokemonsImage\background\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PokemonsImage\bulbasaur.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
