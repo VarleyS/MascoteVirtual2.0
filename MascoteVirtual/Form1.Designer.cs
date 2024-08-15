@@ -145,8 +145,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::MascoteVirtual.Properties.Resources.background;
-            this.pictureBox2.InitialImage = global::MascoteVirtual.Properties.Resources.background;
             this.pictureBox2.Location = new System.Drawing.Point(0, -25);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(2800, 2255);

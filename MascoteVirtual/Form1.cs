@@ -18,6 +18,7 @@ namespace MascoteVirtual
 
         private void InitializaCustomCompoments()
         {
+            TelaMenu.TelaInicial(this, pictureBox3);
             //listBoxPokemon = new ListBox
             //{
             //    Location = new System.Drawing.Point(205, 131),
