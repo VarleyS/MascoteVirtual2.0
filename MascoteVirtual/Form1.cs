@@ -18,14 +18,10 @@ namespace MascoteVirtual
 
         private void InitializaCustomCompoments()
         {
-            TelaMenu.TelaInicial(this, pictureBox3);
-            //listBoxPokemon = new ListBox
-            //{
-            //    Location = new System.Drawing.Point(205, 131),
-            //    Size = new System.Drawing.Size(487, 277)
-            //};
+            TelaMenu.TelaInicial(pictureBox3, axWindowsMediaPlayer1);
 
-            //this.Controls.Add(listBoxPokemon);
+            //TelaMenu.TelaStart(this, pictureBox3, button7);
+            
         }
 
         private async void EventHandler(object sender, EventArgs e)
@@ -51,23 +47,23 @@ namespace MascoteVirtual
             //}
         }
 
-        private void PictureBox1(object sender, EventArgs e)
-        {
-            //configuração inicial do fomulário
-            this.Text = "Exibir Imagem";
-            this.Size = new System.Drawing.Size(800, 600);
+        //private void PictureBox1(object sender, EventArgs e)
+        //{
+        //    //configuração inicial do fomulário
+        //    this.Text = "Exibir Imagem";
+        //    this.Size = new System.Drawing.Size(800, 600);
 
 
-            //inicializa e configura o PictureBox
-            pictureBox2 = new PictureBox
-            {
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                Dock = DockStyle.Fill
-            };
+        //    //inicializa e configura o PictureBox
+        //    pictureBox2 = new PictureBox
+        //    {
+        //        SizeMode = PictureBoxSizeMode.StretchImage,
+        //        Dock = DockStyle.Fill
+        //    };
 
-            //adiciona o PictureBox ao fomuláio
-            this.Controls.Add(pictureBox2);
-        }
+        //    //adiciona o PictureBox ao fomuláio
+        //    this.Controls.Add(pictureBox2);
+        //}
 
         private void button2_Click(object sender, EventArgs e)
         {
